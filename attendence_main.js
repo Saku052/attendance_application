@@ -1,40 +1,17 @@
-import React, { useState } from 'react';
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+$(document).ready(function() {
+    // Button click event handler
+    $('#addTodoButton').click(function() {
+        // Get the input value
+        var todoText = $('#task-form').val();
 
-function TodoApp() {
-    const [todos, setTodos] = useState([]);
-    const [inputValue, setInputValue] = useState('');
+        // Create a new TODO item
+        var todoItem = $('<li>').text(todoText);
 
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value);
-    };
+        // Append the TODO item to the list
+        $('#task-list').append(todoItem);
 
-    const handleAddTodo = () => {
-        if (inputValue.trim() !== '') {
-            setTodos([...todos, inputValue]);
-            setInputValue('');
-        }
-    };
-
-    const handleDeleteTodo = (index) => {
-        const updatedTodos = todos.filter((_, i) => i !== index);
-        setTodos(updatedTodos);
-    };
-
-    return (
-        <div>
-            <h1>Todo App</h1>
-            <input type="text" value={inputValue} onChange={handleInputChange} />
-            <button onClick={handleAddTodo}>Add Todo</button>
-            <ul>
-                {todos.map((todo, index) => (
-                    <li key={index}>
-                        {todo}
-                        <button onClick={() => handleDeleteTodo(index)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
-
-export default TodoApp;
+        // Clear the input field
+        $('#task-list').val('');
+    });
+});
