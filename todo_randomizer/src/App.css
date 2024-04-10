@@ -1,3 +1,63 @@
+/* App Component　*/
+.App {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.MainContent {
+  align-items: center;
+  background-color: #dbe4f3;
+  padding: 20px 100px;
+  width: 100%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SidebarList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SidebarList .row {
+  display: flex;
+  align-items: center;
+  background-color: #586780;
+  padding: 10px 20px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.SidebarList .row:hover {
+  background-color: #4a5b6b;
+}
+
+.row #path {
+  flex: 30%;
+}
+
+.row #title {
+  flex: 70%;
+}
+
 /* Global Styles */
 body, html {
   margin: 0;
@@ -7,13 +67,6 @@ body, html {
   color: #333;
 }
 
-/* App Component */
-.App {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  text-align: left;
-}
 
 h1 {
   color: #0052cc;
