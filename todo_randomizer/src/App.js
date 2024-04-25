@@ -3,8 +3,10 @@ import './App.css';
 import Sidebar from './components/Sidebar.js';
 import TaskList from './TaskList.js';
 import AddTaskForm from './AddTaskForm.js';
+import TopBanner from './TopBanner.js';
 
 function App() {
+
   const [tasks, setTasks] = useState([]);
 
   const addTask = (task) => {
@@ -18,9 +20,10 @@ function App() {
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
-
+ 
   return (
     <div className="App">
+      <TopBanner />
       <Sidebar />
       <div className='MainContent'>
         <h1>Todo List</h1>
