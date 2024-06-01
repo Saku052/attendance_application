@@ -3,7 +3,6 @@ import './App.css';
 import Sidebar from './components/Sidebar.js';
 import TaskList from './TaskList.js';
 import AddTaskForm from './AddTaskForm.js';
-import TopBanner from './TopBanner.js';
 
 function App() {
 
@@ -23,7 +22,6 @@ function App() {
  
   return (
     <div className="App">
-      <TopBanner />
       <Sidebar />
       <div className='MainContent'>
         <h1>Todo List</h1>
